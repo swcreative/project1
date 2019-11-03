@@ -33,8 +33,9 @@ To use the Share Diary [click here.](https://swcreative.github.io/project1/)
 ## Technologies uses
 
 - html, CSS
-- Ruby on Rails version XXX
-- bcrypt (for secure user access)
+- Ruby versin 2.6.5 on Rails version 6.0.0
+- bcrypt version 3.1.7 (for secure user access)
+- Postgresql database
 
 ## Configuration
 

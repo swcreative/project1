@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_01_061814) do
+ActiveRecord::Schema.define(version: 2019_11_03_064150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,31 +18,33 @@ ActiveRecord::Schema.define(version: 2019_11_01_061814) do
   create_table "lists", force: :cascade do |t|
     t.text "title"
     t.integer "user_id"
-    t.integer "share_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "lists_notes", id: false, force: :cascade do |t|
+  create_table "lists_shares", id: false, force: :cascade do |t|
     t.integer "list_id"
-    t.integer "note_id"
+    t.integer "share_id"
   end
 
   create_table "notes", force: :cascade do |t|
     t.text "title"
-    t.date "note_date"
+    t.date "date"
     t.text "post"
-    t.integer "share_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "notes_shares", id: false, force: :cascade do |t|
+    t.integer "note_id"
+    t.integer "share_id"
+  end
+
   create_table "shares", force: :cascade do |t|
     t.text "code"
-    t.float "current_price"
-    t.float "buy_price"
-    t.float "sell_price"
+    t.text "name"
+    t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_11_01_061814) do
     t.text "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
