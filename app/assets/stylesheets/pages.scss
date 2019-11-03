@@ -1,0 +1,145 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* SW CSS Template */
+
+/* Reset */
+* {
+  box-sizing: border-box;
+	padding: 0;
+  margin: 0;
+/*   border: 1px solid red; */
+}
+
+/* ROOT definitions */
+:root {
+  --text-color: #2e2e2e;
+  --text-color: rgb(26, 26, 26);
+  --text-color-light: rgba(26, 26, 26, 0.5);
+  --text-a: #1792d2;
+  --font-headings: 'Roboto', sans-serif;
+  --font-text: 'Lora', serif;
+  --button-color: #fff;
+}
+
+/* FONTS */
+/* Heading */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/* Main */
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+/* TYPOGRAPHY */
+h1, h2, h3, p, .quote {
+  line-height: 1.5;
+  margin: 0 1em;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-headings);
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, quote, a {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+}
+
+.quote {
+  font-style: italic;
+  border-left: 0.2em solid var(--text-color-light);
+  padding-left: 0.5em;
+  color: var(--text-color-light);
+}
+
+aside {
+  border: 2px solid green;
+  margin: 3em;
+}
+
+/* NAVIGATION */
+nav ul, header ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a, header a {
+  text-decoration: none;
+  color: var(--text-color);
+  text-transform: uppercase;
+  padding: 0.7em 0.7em 0.1em 0.7em;
+  margin: 0 1em;
+  display: inline-block;
+}
+
+nav a:hover,
+nav a:focus,
+header a:hover,
+header a:focus
+  {
+  color: var(--text-a);
+}
+
+.current-page {
+  color: var(--text-a);
+  border-bottom: 2px solid var(--text-a);
+}
+
+
+
+/* OBJECT */
+/* Grow */
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.03);
+}
+
+/* HOME PAGE */
+.full-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  // border: 1px solid red;
+}
+.full-page>main {
+  // border: 1px solid green;
+  // margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-page>main>* {
+  margin: 1em 0;
+  text-align: center;
+}
+
+
+.full-page>main>button {
+  font-size: 2rem;
+  color: var(--button-color);
+  background-color: var(--text-a);
+  margin: auto;
+  display: flex;
+  padding: 0.5em;
+  border-radius: 0.3em;
+}

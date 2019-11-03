@@ -1,5 +1,5 @@
 class Note < ApplicationRecord
-  belongs_to :users, optional :false
+  belongs_to :users, :optional => true
 
   has_and_belongs_to_many :shares
 
